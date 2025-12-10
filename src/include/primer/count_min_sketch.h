@@ -12,11 +12,11 @@
 
 #pragma once
 
+#include <atomic>
 #include <cstdint>
 #include <functional>
 #include <utility>
 #include <vector>
-#include <atomic>
 
 #include "common/util/hash_util.h"
 
