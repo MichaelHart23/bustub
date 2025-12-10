@@ -16,6 +16,7 @@
 #include <functional>
 #include <utility>
 #include <vector>
+#include <atomic>
 
 #include "common/util/hash_util.h"
 
@@ -84,6 +85,8 @@ class CountMinSketch {
   uint32_t depth_;  // Number of independent hash functions
   /** Pre-computed hash functions for each row */
   std::vector<std::function<size_t(const KeyType &)>> hash_functions_;
+
+  std::vector<std::vector<std::atomic<uint32_t>>> table_;
 
   /** @fall2025 PLEASE DO NOT MODIFY THE FOLLOWING */
   constexpr static size_t SEED_BASE = 15445;
